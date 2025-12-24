@@ -2,11 +2,14 @@
   "name": "flight-tuner",
   "version": "0.1.0",
   "private": true,
+  "main": "main.js",
   "scripts": {
     "dev": "next dev",
+    "desktop": "electron .",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "dist": "npm run build && electron-builder"
   },
   "dependencies": {
     "@types/uuid": "^10.0.0",
@@ -25,9 +28,25 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/uuid": "^10.0.0",
+    "electron": "^33.2.1",
+    "electron-builder": "^24.13.3",
     "eslint": "^9",
     "eslint-config-next": "16.1.1",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "build": {
+    "appId": "com.pidtuneai.app",
+    "productName": "PIDTUNEAI",
+    "directories": {
+      "output": "dist"
+    },
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "win": {
+      "target": "portable"
+    }
   }
 }
