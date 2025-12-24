@@ -16,8 +16,8 @@ def analyze_log(file_path, weight=None, size=None, tuning_style="freestyle"):
                     break
         
         # Load CSV data
-        # use engine='python' for better error handling on messy headers
-        df = pd.read_csv(file_path, skiprows=skip_rows, on_bad_lines='skip', low_memory=False)
+        # sep=None with engine='python' allows auto-detection of the separator
+        df = pd.read_csv(file_path, skiprows=skip_rows, sep=None, engine='python', on_bad_lines='skip')
         
         # Clean column names
         df.columns = df.columns.str.strip()

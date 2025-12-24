@@ -2,16 +2,17 @@
   "name": "flight-tuner",
   "version": "0.1.0",
   "private": true,
-  "main": "main.js",
   "scripts": {
     "dev": "next dev",
-    "desktop": "electron .",
     "build": "next build",
+    "export": "next build && next export",
     "start": "next start",
     "lint": "eslint",
-    "dist": "npm run build && electron-builder"
+    "tauri": "tauri"
   },
   "dependencies": {
+    "@tauri-apps/api": "^2.9.1",
+    "@tauri-apps/cli": "^2.9.6",
     "@types/uuid": "^10.0.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.26",
@@ -29,8 +30,6 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/uuid": "^10.0.0",
-    "electron": "^33.2.1",
-    "electron-builder": "^24.13.3",
     "eslint": "^9",
     "eslint-config-next": "16.1.1",
     "tailwindcss": "^4",

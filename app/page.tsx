@@ -56,9 +56,10 @@ export default function Home() {
   };
 
   const loadSample = async () => {
-      const dummyContent = "time (us),gyroADC[0],gyroADC[1],gyroADC[2],setpoint[0],setpoint[1],setpoint[2]\n" + 
+      const dummyHeader = "time (us),gyroADC[0],gyroADC[1],gyroADC[2],setpoint[0],setpoint[1],setpoint[2],debug[0],debug[1],debug[2],motor[0],motor[1]\n";
+      const dummyContent = dummyHeader + 
                            Array.from({length: 1000}, (_, i) => 
-                               `${i*1000},${Math.sin(i*0.1)*50 + Math.random()*10},${Math.cos(i*0.1)*50},${Math.sin(i*0.05)*30},0,0,0`
+                               `${i*1000},${Math.sin(i*0.1)*50 + Math.random()*10},${Math.cos(i*0.1)*50},${Math.sin(i*0.05)*30},0,0,0,0,0,0,0,0`
                            ).join('\n');
       
       const file = new File([dummyContent], "sample_log.csv", { type: "text/csv" });
