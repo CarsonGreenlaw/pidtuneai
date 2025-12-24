@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  --background: #0a0a0f;
+  --foreground: #ededed;
+  --neon-blue: #00f3ff;
+  --neon-pink: #ff0099;
+  --neon-green: #00ff66;
+  --grid-color: rgba(0, 243, 255, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0f;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+.cyber-grid {
+  background-image: 
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center top;
+}
+
+.neon-text {
+  text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue);
+}
+
+.neon-border {
+  box-shadow: 0 0 5px var(--neon-blue), inset 0 0 5px var(--neon-blue);
+  border: 1px solid var(--neon-blue);
+}
+
+.hud-panel {
+  background: rgba(10, 10, 15, 0.8);
+  border: 1px solid rgba(0, 243, 255, 0.3);
+  backdrop-filter: blur(5px);
+}
